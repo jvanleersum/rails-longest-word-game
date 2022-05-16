@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Your score</h1>
+
+    <% if @found && @valid %>
+    <h3>Congrats! <%= @word_upcase %> gave you a score of <%= @result %> points</h3>
+    <% elsif @valid %>
+    <h3>Unfortunately, <%= @word_upcase %> is <%= @result %> </h3>
+    <% else %>
+    <h3>Unfortunately, <%= @word_upcase %> is <%= @result %> <%= @letters%></h3>
+    <% end %>
+
+    <%= link_to "Play again!", new_path, class: 'btn-return' %>
+</div>
+
